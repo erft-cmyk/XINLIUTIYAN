@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心流之旅 - 探索意识的边界</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-blue: #1a237e;
+            --neural-purple: #6a1b9a;
+            --synapse-pink: #ad1457;
+            --consciousness-teal: #00838f;
+            --mind-green: #2e7d32;
+            --flow-orange: #ef6c00;
+            --serenity-blue: #42a5f5;
+            --calm-lavender: #ab47bc;
+            --peace-mint: #66bb6a;
+            --text-primary: #263238;
+            --text-secondary: #546e7a;
+            --text-light: #90a4ae;
+            --bg-gradient-start: #0d1b2a;
+            --bg-gradient-mid: #1b263b;
+            --bg-gradient-end: #415a77;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(106, 27, 154, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(66, 165, 245, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(171, 71, 188, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .neural-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, rgba(66, 165, 245, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float-particle 20s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .mouse-trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(171, 71, 188, 0.6) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999;
+            transition: transform 0.1s ease-out, opacity 0.5s ease-out;
+        }
+
+        @keyframes float-particle {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translate(100px, -100px) scale(1.5);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translate(-50px, -200px) scale(0.8);
+                opacity: 0.4;
+            }
+            75% {
+                transform: translate(80px, -150px) scale(1.2);
+                opacity: 0.5;
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(13, 27, 42, 0.8);
+            border-bottom: 1px solid rgba(66, 165, 245, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 300;
+            background: linear-gradient(135deg, #42a5f5 0%, #ab47bc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: rgba(224, 224, 224, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: #e0e0e0;
+            background: rgba(66, 165, 245, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, rgba(66, 165, 245, 0.2) 0%, rgba(171, 71, 188, 0.2) 100%);
+            color: var(--serenity-blue);
+        }
+
+        .audio-control {
+            position: relative;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .audio-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(66, 165, 245, 0.3) 0%, rgba(171, 71, 188, 0.3) 100%);
+            border: 1px solid rgba(66, 165, 245, 0.4);
+            color: #e0e0e0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .audio-btn:hover {
+            transform: scale(1.1);
+            border-color: rgba(66, 165, 245, 0.8);
+            box-shadow: 0 0 30px rgba(66, 165, 245, 0.5);
+        }
+
+        .audio-btn.active {
+            background: linear-gradient(135deg, var(--serenity-blue) 0%, var(--calm-lavender) 100%);
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(66, 165, 245, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(66, 165, 245, 0.8); }
+        }
+
+        .volume-slider {
+            width: 100px;
+            height: 4px;
+            background: rgba(66, 165, 245, 0.2);
+            border-radius: 2px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .audio-control:hover .volume-slider {
+            opacity: 1;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, rgba(66, 165, 245, 0.2) 0%, rgba(171, 71, 188, 0.2) 100%);
+            border: 1px solid rgba(66, 165, 245, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--serenity-blue);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #42a5f5 0%, #ab47bc 50%, #66bb6a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            letter-spacing: 4px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(224, 224, 224, 0.8);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(224, 224, 224, 0.7);
+            line-height: 2;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .neural-network {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .neuron {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(171, 71, 188, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(2);
+                opacity: 0.8;
+            }
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-number {
+            display: inline-block;
+            font-size: 0.875rem;
+            color: var(--serenity-blue);
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #e0e0e0 0%, #90a4ae 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: rgba(224, 224, 224, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .flow-states {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .flow-card {
+            background: linear-gradient(135deg, rgba(26, 35, 126px;
+            margin-top: 4rem;
+        }
+
+        .flow-card {
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.3) 0%, rgba(106, 27, 154, 0.2) 100%);
+            border: 1px solid rgba(66, 165, 245, 0.2);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .flow-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--serenity-blue), var(--calm-lavender), var(--peace-mint));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .flow-card:hover::before {
+            opacity: 1;
+        }
+
+        .flow-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(66, 165, 245, 0.6);
+            box-shadow: 0 25px 70px rgba(66, 165, 245, 0.3);
+        }
+
+        .flow-card:active {
+            transform: translateY(-5px) scale(0.98);
+            transition: transform 0.1s ease;
+        }
+
+        .flow-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, rgba(66, 165, 245, 0.2) 0%, rgba(171, 71, 188, 0.2) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            position: relative;
+            animation: rotate-slow 20s linear infinite;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .flow-card:nth-child(1) .flow-icon { animation-delay: 0s; }
+        .flow-card:nth-child(2) .flow-icon { animation-delay: -7s; }
+        .flow-card:nth-child(3) .flow-icon { animation-delay: -14s; }
+
+        .flow-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .flow-card p {
+            color: rgba(224, 224, 224, 0.7);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .brain-waves {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .wave-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .wave-visual {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.2) 0%, rgba(106, 27, 154, 0.1) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(66, 165, 245, 0.2);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .wave-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--serenity-blue), transparent);
+            animation: wave-move 3s ease-in-out infinite;
+        }
+
+        @keyframes wave-move {
+            0%, 100% {
+                transform: translateY(0) scaleY(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-20px) scaleY(1.5);
+                opacity: 0.8;
+            }
+        }
+
+        .wave-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .wave-content p {
+            color: rgba(224, 224, 224, 0.7);
+            line-height: 2;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .wave-list {
+            list-style: none;
+        }
+
+        .wave-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: rgba(224, 224, 224, 0.8);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .wave-list li:hover {
+            background: rgba(66, 165, 245, 0.1);
+            transform: translateX(10px);
+        }
+
+        .wave-list li::before {
+            content: '◈';
+            color: var(--serenity-blue);
+            font-size: 1.5rem;
+        }
+
+        .consciousness-levels {
+            padding: 8rem 0;
+        }
+
+        .level-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 4rem auto 0;
+        }
+
+        .level-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, 
+                var(--serenity-blue) 0%, 
+                var(--calm-lavender) 33%, 
+                var(--peace-mint) 66%, 
+                var(--flow-orange) 100%);
+            transform: translateX(-50%);
+        }
+
+        .level-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .level-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .level-content {
+            width: calc(50% - 3rem);
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.3) 0%, rgba(106, 27, 154, 0.2) 100%);
+            border: 1px solid rgba(66, 165, 245, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .level-content:hover {
+            border-color: rgba(66, 165, 245, 0.6);
+            transform: scale(1.03);
+            box-shadow: 0 20px 60px rgba(66, 165, 245, 0.2);
+        }
+
+        .level-content:active {
+            transform: scale(0.98);
+            transition: transform 0.1s ease;
+        }
+
+        .level-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--serenity-blue);
+            border-radius: 50%;
+            border: 4px solid var(--bg-gradient-mid);
+            z-index: 1;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .level-dot:hover {
+            transform: translateX(-50%) scale(1.5);
+        }
+
+        .level-item:nth-child(1) .level-dot { background: var(--serenity-blue); }
+        .level-item:nth-child(2) .level-dot { background: var(--calm-lavender); }
+        .level-item:nth-child(3) .level-dot { background: var(--peace-mint); }
+        .level-item:nth-child(4) .level-dot { background: var(--flow-orange); }
+
+        .level-number {
+            font-size: 3rem;
+            font-weight: 200;
+            color: var(--serenity-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .level-item:nth-child(2) .level-number { color: var(--calm-lavender); }
+        .level-item:nth-child(3) .level-number { color: var(--peace-mint); }
+        .level-item:nth-child(4) .level-number { color: var(--flow-orange); }
+
+        .level-title {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+
+        .level-desc {
+            color: rgba(224, 224, 224, 0.7);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .meditation-space {
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .breathing-circle {
+            width: 300px;
+            height: 300px;
+            margin: 4rem auto;
+            background: radial-gradient(circle, rgba(66, 165, 245, 0.3) 0%, transparent 70%);
+            border: 2px solid rgba(66, 165, 245, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: breathe 8s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        .breathing-circle::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(171, 71, 188, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: breathe 8s ease-in-out infinite reverse;
+        }
+
+        .breathing-text {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            font-weight: 300;
+            letter-spacing: 2px;
+            z-index: 1;
+        }
+
+        .neuroscience-facts {
+            padding: 8rem 0;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .fact-card {
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.2) 0%, rgba(106, 27, 154, 0.1) 100%);
+            border: 1px solid rgba(66, 165, 245, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .fact-card:hover {
+            border-color: rgba(66, 165, 245, 0.6);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(66, 165, 245, 0.2);
+        }
+
+        .fact-card:active {
+            transform: translateY(-3px) scale(0.98);
+            transition: transform 0.1s ease;
+        }
+
+        .fact-number {
+            font-size: 4rem;
+            font-weight: 200;
+            background: linear-gradient(135deg, var(--serenity-blue) 0%, var(--calm-lavender) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .fact-title {
+            font-size: 1.25rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .fact-desc {
+            color: rgba(224, 224, 224, 0.7);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .journey-end {
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .end-message {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .end-message h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #42a5f5 0%, #ab47bc 50%, #66bb6a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .end-message p {
+            color: rgba(224, 224, 224, 0.7);
+            line-height: 2;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, var(--serenity-blue) 0%, var(--calm-lavender) 100%);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-family: 'Noto Serif SC', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(66, 165, 245, 0.4);
+        }
+
+        .footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(66, 165, 245, 0.1);
+        }
+
+        .footer p {
+            color: rgba(224, 224, 224, 0.5);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.4) 0%, rgba(106, 27, 154, 0.3) 100%);
+            border: 1px solid rgba(66, 165, 245, 0.3);
+            border-radius: 32px;
+            padding: 3rem;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.5s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(66, 165, 245, 0.2);
+            border: 1px solid rgba(66, 165, 245, 0.3);
+            color: #e0e0e0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(66, 165, 245, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(66, 165, 245, 0.2);
+        }
+
+        .modal-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #42a5f5 0%, #ab47bc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal-subtitle {
+            color: rgba(224, 224, 224, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .modal-body {
+            color: rgba(224, 224, 224, 0.8);
+            line-height: 2;
+        }
+
+        .modal-body h3 {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            margin: 2rem 0 1rem;
+            font-weight: 400;
+        }
+
+        .modal-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .modal-body li {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: rgba(66, 165, 245, 0.1);
+            border-radius: 12px;
+            border-left: 3px solid var(--serenity-blue);
+        }
+
+        .modal-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .modal-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(66, 165, 245, 0.1);
+            border-radius: 16px;
+        }
+
+        .modal-stat-number {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: var(--serenity-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-stat-label {
+            font-size: 0.9rem;
+            color: rgba(224, 224, 224, 0.6);
+        }
+
+        .interactive-demo {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(66, 165, 245, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(66, 165, 245, 0.2);
+        }
+
+        .demo-title {
+            font-size: 1.25rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .demo-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(66, 165, 245, 0.2) 0%, rgba(171, 71, 188, 0.2) 100%);
+            border: 1px solid rgba(66, 165, 245, 0.3);
+            border-radius: 25px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .demo-btn:hover {
+            background: linear-gradient(135deg, var(--serenity-blue) 0%, var(--calm-lavender) 100%);
+            transform: translateY(-2px);
+        }
+
+        .demo-btn.active {
+            background: linear-gradient(135deg, var(--serenity-blue) 0%, var(--calm-lavender) 100%);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-right: 2px solid rgba(66, 165, 245, 0.5);
+            border-bottom: 2px solid rgba(66, 165, 245, 0.5);
+            transform: rotate(45deg);
+        }
+
+        @media (max-width: 1024px) {
+            .flow-states {
+                grid-template-columns: 1fr;
+            }
+
+            .wave-container {
+                grid-template-columns: 1fr;
+            }
+
+            .wave-visual {
+                height: 300px;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .level-timeline::before {
+                left: 20px;
+            }
+
+            .level-item,
+            .level-item:nth-child(odd) {
+                flex-direction: row;
+                padding-left: 60px;
+            }
+
+            .level-content {
+                width: 100%;
+            }
+
+            .level-dot {
+                left: 20px;
+            }
+
+            .modal-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .breathing-circle {
+                width: 250px;
+                height: 250px;
+            }
+
+            .breathing-circle::before {
+                width: 170px;
+                height: 170px;
+            }
+
+            .modal-content {
+                margin: 1rem;
+                padding: 2rem;
+            }
+
+            .audio-control {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav">
+            <div class="nav-logo">心流之旅</div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#hero" class="nav-link active" data-section="hero">首页</a></li>
+                <li class="nav-item"><a href="#flow" class="nav-link" data-section="flow">心流境界</a></li>
+                <li class="nav-item"><a href="#brainwaves" class="nav-link" data-section="brainwaves">脑波交响</a></li>
+                <li class="nav-item"><a href="#consciousness" class="nav-link" data-section="consciousness">意识层次</a></li>
+                <li class="nav-item"><a href="#meditation" class="nav-link" data-section="meditation">冥想空间</a></li>
+                <li class="nav-item"><a href="#science" class="nav-link" data-section="science">神经科学</a></li>
+            </ul>
+            <div class="audio-control">
+                <button class="audio-btn" id="audioToggle" title="开启/关闭音效">🎵</button>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+            </div>
+        </div>
+    </nav>
+
+    <div class="neural-particles" id="particles"></div>
+
+    <div class="hero" id="hero">
+        <div class="neural-network" id="neuralNetwork"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">CONSCIOUSNESS EXPLORATION</div>
+                <h1>心流之旅</h1>
+                <p class="hero-subtitle">探索意识的边界 · 感受神经的律动</p>
+                <p class="hero-description">
+                    在这个数字化的冥想空间里，我们将带你穿越意识的层次，
+                    探索大脑的奥秘，体验心流的极致状态。
+                    每一次呼吸，都是与神经元的对话；
+                    每一个念头，都是突触间的舞蹈。
+                </p>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </div>
+
+    <section class="section" id="flow">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h2 class="section-title">心流的三重境界</h2>
+                <p class="section-subtitle">
+                    从专注到沉浸，从沉浸到超越，体验意识的升华之旅
+                </p>
+            </div>
+            <div class="flow-states">
+                <div class="flow-card" data-modal="focus">
+                    <div class="flow-icon">◐</div>
+                    <h3>专注之境</h3>
+                    <p>当注意力完全聚焦于当下，外界的喧嚣渐渐远去。神经元开始同步放电，大脑进入高度集中的状态。这是心流的入口，也是意识觉醒的开始。</p>
+                </div>
+                <div class="flow-card" data-modal="immersion">
+                    <div class="flow-icon">◑</div>
+                    <h3>沉浸之海</h3>
+                    <p>时间感消失，自我边界模糊。多巴胺与内啡肽在大脑中流淌，创造力的源泉被打开。每一个动作都流畅自然，思维与行动完美合一。</p>
+                </div>
+                <div class="flow-card" data-modal="transcendence">
+                    <div class="flow-icon">◉</div>
+                    <h3>超越之境</h3>
+                    <p>意识突破个体的限制，与宇宙的频率共振。前额叶皮层暂时休眠，默认模式网络沉寂。这是禅宗所说的"无我"，是心流的最高境界。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brain-waves" id="brainwaves">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2 class="section-title">脑波的交响</h2>
+                <p class="section-subtitle">
+                    大脑的电信号编织成意识的乐章
+                </p>
+            </div>
+            <div class="wave-container">
+                <div class="wave-visual" data-modal="brainwaves">
+                    <div class="wave-line" style="top: 20%; animation-delay: 0s;"></div>
+                    <div class="wave-line" style="top: 35%; animation-delay: 0.5s;"></div>
+                    <div class="wave-line" style="top: 50%; animation-delay: 1s;"></div>
+                    <div class="wave-line" style="top: 65%; animation-delay: 1.5s;"></div>
+                    <div class="wave-line" style="top: 80%; animation-delay: 2s;"></div>
+                </div>
+                <div class="wave-content">
+                    <h3>四种脑波状态</h3>
+                    <p>大脑每时每刻都在产生电信号，这些信号以不同的频率振荡，形成了我们的意识状态。</p>
+                    <ul class="wave-list">
+                        <li data-wave="beta"><strong>Beta (14-30 Hz)</strong> - 清醒警觉，逻辑思维</li>
+                        <li data-wave="alpha"><strong>Alpha (8-13 Hz)</strong> - 放松平静，创造力涌现</li>
+                        <li data-wave="theta"><strong>Theta (4-7 Hz)</strong> - 深度冥想，潜意识开启</li>
+                        <li data-wave="delta"><strong>Delta (0.5-3 Hz)</strong> - 深度睡眠，身心修复</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="consciousness-levels" id="consciousness">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h2 class="section-title">意识层次探索</h2>
+                <p class="section-subtitle">
+                    从表层到深层，揭开意识的神秘面纱
+                </p>
+            </div>
+            <div class="level-timeline">
+                <div class="level-item">
+                    <div class="level-content" data-modal="consciousness-1">
+                        <div class="level-number">I</div>
+                        <h3 class="level-title">表层意识</h3>
+                        <p class="level-desc">日常的思考、决策、感知。这是我们最熟悉的意识状态，处理着每秒约40比特的信息。前额叶皮层活跃，逻辑思维主导。</p>
+                    </div>
+                    <div class="level-dot" data-modal="consciousness-1"></div>
+                </div>
+                <div class="level-item">
+                    <div class="level-content" data-modal="consciousness-2">
+                        <div class="level-number">II</div>
+                        <h3 class="level-title">潜意识层</h3>
+                        <p class="level-desc">情绪、记忆、习惯的存储地。每秒处理约11,000,000比特信息，是表层意识的275,000倍。这里藏着我们的直觉和创造力。</p>
+                    </div>
+                    <div class="level-dot" data-modal="consciousness-2"></div>
+                </div>
+                <div class="level-item">
+                    <div class="level-content" data-modal="consciousness-3">
+                        <div class="level-number">III</div>
+                        <h3 class="level-title">无意识海洋</h3>
+                        <p class="level-desc">本能、驱动力、集体无意识。荣格所说的原型就栖息于此。这里连接着人类共同的深层记忆，是创造力的终极源泉。</p>
+                    </div>
+                    <div class="level-dot" data-modal="consciousness-3"></div>
+                </div>
+                <div class="level-item">
+                    <div class="level-content" data-modal="consciousness-4">
+                        <div class="level-number">IV</div>
+                        <h3 class="level-title">超意识场</h3>
+                        <p class="level-desc">超越个体的意识状态。冥想者、艺术家、科学家偶尔触及的领域。在这里，时间与空间失去意义，只有纯粹的觉知存在。</p>
+                    </div>
+                    <div class="level-dot" data-modal="consciousness-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="meditation-space" id="meditation">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h2 class="section-title">呼吸冥想空间</h2>
+                <p class="section-subtitle">
+                    跟随圆圈的律动，调整你的呼吸
+                </p>
+            </div>
+            <div class="breathing-circle" id="breathingCircle">
+                <span class="breathing-text">呼吸</span>
+            </div>
+            <p style="color: rgba(224, 224, 224, 0.6); margin-top: 2rem; font-size: 1rem;">
+                圆圈扩张时吸气 · 圆圈收缩时呼气<br>
+                持续8秒一个循环，进入Alpha波状态
+            </p>
+        </div>
+    </section>
+
+    <section class="neuroscience-facts" id="science">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h2 class="section-title">神经科学启示</h2>
+                <p class="section-subtitle">
+                    大脑的惊人事实，改变你对意识的理解
+                </p>
+            </div>
+            <div class="facts-grid">
+                <div class="fact-card" data-modal="neurons">
+                    <div class="fact-number">86B</div>
+                    <h3 class="fact-title">神经元数量</h3>
+                    <p class="fact-desc">人脑拥有约860亿个神经元，每个神经元可以与上万个其他神经元连接，形成超过100万亿个突触连接。</p>
+                </div>
+                <div class="fact-card" data-modal="power">
+                    <div class="fact-number">20W</div>
+                    <h3 class="fact-title">大脑功耗</h3>
+                    <p class="fact-desc">大脑仅占体重的2%，却消耗20%的能量。这个高效的生物计算机，用相当于一个灯泡的功率，创造整个意识世界。</p>
+                </div>
+                <div class="fact-card" data-modal="speed">
+                    <div class="fact-number">120m/s</div>
+                    <h3 class="fact-title">信号速度</h3>
+                    <p class="fact-desc">神经冲动在有髓鞘的神经纤维上，可以以每秒120米的速度传播。一个念头，在毫秒间穿越整个大脑。</p>
+                </div>
+                <div class="fact-card" data-modal="connections">
+                    <div class="fact-number">∞</div>
+                    <h3 class="fact-title">连接可能</h3>
+                    <p class="fact-desc">大脑可能的连接方式数量，超过宇宙中原子总数。每个大脑都是一个独特的宇宙，蕴藏着无限的可能性。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey-end">
+        <div class="container">
+            <div class="end-message">
+                <h2>旅程才刚刚开始</h2>
+                <p>
+                    意识的探索没有终点，每一次觉醒都是新的起点。
+                    当你开始观察自己的思维，你就已经踏上了这条道路。
+                    保持好奇，保持觉知，让心流成为你生命的常态。
+                </p>
+                <a href="#" class="cta-button" id="startJourney">开始你的心流之旅</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>探索意识 · 觉醒心智 · 拥抱心流</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-subtitle" id="modalSubtitle"></p>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        let audioContext;
+        let isAudioEnabled = false;
+        let masterGain;
+        let activeOscillators = [];
+        let backgroundOscillator;
+        let backgroundGain;
+
+        function initAudio() {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            masterGain = audioContext.createGain();
+            masterGain.connect(audioContext.destination);
+            masterGain.gain.value = 0.5;
+        }
+
+        function playTone(frequency, duration = 0.3, type = 'sine') {
+            if (!isAudioEnabled || !audioContext) return;
+            
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.type = type;
+            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(masterGain);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+
+        function playClickSound() {
+            playTone(800, 0.1, 'sine');
+        }
+
+        function playHoverSound() {
+            playTone(600, 0.05, 'sine');
+        }
+
+        function playModalOpenSound() {
+            playTone(523.25, 0.2, 'sine');
+            setTimeout(() => playTone(659.25, 0.2, 'sine'), 100);
+            setTimeout(() => playTone(783.99, 0.3, 'sine'), 200);
+        }
+
+        function playModalCloseSound() {
+            playTone(783.99, 0.2, 'sine');
+            setTimeout(() => playTone(659.25, 0.2, 'sine'), 100);
+            setTimeout(() => playTone(523.25, 0.3, 'sine'), 200);
+        }
+
+        function playBreathingSound(phase) {
+            if (!isAudioEnabled || !audioContext) return;
+            
+            const frequencies = {
+                'inhale': [261.63, 329.63, 392.00],
+                'hold': [392.00],
+                'exhale': [392.00, 329.63, 261.63],
+                'rest': [261.63]
+            };
+            
+            const freqs = frequencies[phase] || [261.63];
+            freqs.forEach((freq, i) => {
+                setTimeout(() => playTone(freq, 1.5, 'sine'), i * 100);
+            });
+        }
+
+        function playBrainwaveDemo(type) {
+            if (!isAudioEnabled || !audioContext) {
+                alert('请先点击右上角音效按钮开启音效');
+                return;
+            }
+            
+            const brainwaveFreqs = {
+                'beta': { base: 200, beat: 20, name: 'Beta' },
+                'alpha': { base: 200, beat: 10, name: 'Alpha' },
+                'theta': { base: 200, beat: 6, name: 'Theta' },
+                'delta': { base: 200, beat: 2, name: 'Delta' }
+            };
+            
+            const config = brainwaveFreqs[type];
+            if (!config) return;
+            
+            const leftOsc = audioContext.createOscillator();
+            const rightOsc = audioContext.createOscillator();
+            const leftGain = audioContext.createGain();
+            const rightGain = audioContext.createGain();
+            const merger = audioContext.createChannelMerger(2);
+            
+            leftOsc.frequency.value = config.base;
+            rightOsc.frequency.value = config.base + config.beat;
+            
+            leftOsc.connect(leftGain);
+            rightOsc.connect(rightGain);
+            leftGain.connect(merger, 0, 0);
+            rightGain.connect(merger, 0, 1);
+            merger.connect(masterGain);
+            
+            leftGain.gain.setValueAtTime(0.2, audioContext.currentTime);
+            rightGain.gain.setValueAtTime(0.2, audioContext.currentTime);
+            leftGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 5);
+            rightGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 5);
+            
+            leftOsc.start();
+            rightOsc.start();
+            leftOsc.stop(audioContext.currentTime + 5);
+            rightOsc.stop(audioContext.currentTime + 5);
+        }
+
+        function playSuccessSound() {
+            playTone(523.25, 0.1, 'sine');
+            setTimeout(() => playTone(659.25, 0.1, 'sine'), 80);
+            setTimeout(() => playTone(783.99, 0.15, 'sine'), 160);
+        }
+
+        function playTransitionSound() {
+            playTone(440, 0.3, 'triangle');
+        }
+
+        function playNotificationSound() {
+            playTone(880, 0.1, 'sine');
+            setTimeout(() => playTone(880, 0.1, 'sine'), 150);
+        }
+
+        function startBackgroundAmbient() {
+            if (!isAudioEnabled || !audioContext || backgroundOscillator) return;
+            
+            backgroundOscillator = audioContext.createOscillator();
+            backgroundGain = audioContext.createGain();
+            
+            backgroundOscillator.type = 'sine';
+            backgroundOscillator.frequency.setValueAtTime(60, audioContext.currentTime);
+            
+            backgroundGain.gain.setValueAtTime(0.05, audioContext.currentTime);
+            
+            backgroundOscillator.connect(backgroundGain);
+            backgroundGain.connect(masterGain);
+            
+            backgroundOscillator.start();
+            
+            const lfo = audioContext.createOscillator();
+            const lfoGain = audioContext.createGain();
+            lfo.frequency.value = 0.1;
+            lfoGain.gain.value = 10;
+            lfo.connect(lfoGain);
+            lfoGain.connect(backgroundOscillator.frequency);
+            lfo.start();
+        }
+
+        function stopBackgroundAmbient() {
+            if (backgroundOscillator) {
+                backgroundOscillator.stop();
+                backgroundOscillator = null;
+            }
+        }
+
+        const audioToggle = document.getElementById('audioToggle');
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        audioToggle.addEventListener('click', () => {
+            if (!audioContext) {
+                initAudio();
+            }
+            
+            isAudioEnabled = !isAudioEnabled;
+            audioToggle.classList.toggle('active', isAudioEnabled);
+            audioToggle.textContent = isAudioEnabled ? '🔊' : '🎵';
+            
+            if (isAudioEnabled) {
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume();
+                }
+                startBackgroundAmbient();
+                playClickSound();
+            } else {
+                stopBackgroundAmbient();
+            }
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            if (masterGain) {
+                masterGain.gain.value = e.target.value / 100;
+            }
+        });
+
+        const modalData = {
+            'focus': {
+                title: '专注之境',
+                subtitle: '心流的第一重境界',
+                content: `
+                    <h3>什么是专注状态？</h3>
+                    <p>专注是心流状态的入口，当我们完全投入某项活动时，大脑会进入一种特殊的运作模式。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">40</div>
+                            <div class="modal-stat-label">比特/秒</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">15-20</div>
+                            <div class="modal-stat-label">分钟进入状态</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">500%</div>
+                            <div class="modal-stat-label">生产力提升</div>
+                        </div>
+                    </div>
+                    
+                    <h3>如何进入专注状态？</h3>
+                    <ul>
+                        <li>消除干扰：关闭通知，创造安静环境</li>
+                        <li>设定明确目标：知道自己要完成什么</li>
+                        <li>从简单开始：先做5分钟，建立动力</li>
+                        <li>使用番茄工作法：25分钟专注 + 5分钟休息</li>
+                    </ul>
+                    
+                    <div class="interactive-demo">
+                        <div class="demo-title">🎵 专注音调体验</div>
+                        <div class="demo-buttons">
+                            <button class="demo-btn" onclick="playTone(432, 2, 'sine')">432 Hz - 自然频率</button>
+                            <button class="demo-btn" onclick="playTone(528, 2, 'sine')">528 Hz - 修复频率</button>
+                            <button class="demo-btn" onclick="playTone(639, 2, 'sine')">639 Hz - 连接频率</button>
+                        </div>
+                    </div>
+                `
+            },
+            'immersion': {
+                title: '沉浸之海',
+                subtitle: '心流的第二重境界',
+                content: `
+                    <h3>沉浸状态的神经机制</h3>
+                    <p>当专注持续深入，大脑会释放一系列神经递质，创造出独特的体验。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">多巴胺</div>
+                            <div class="modal-stat-label">奖励与动力</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">内啡肽</div>
+                            <div class="modal-stat-label">愉悦与镇痛</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">血清素</div>
+                            <div class="modal-stat-label">平静与满足</div>
+                        </div>
+                    </div>
+                    
+                    <h3>沉浸的特征</h3>
+                    <ul>
+                        <li>时间扭曲：几小时感觉像几分钟</li>
+                        <li>自我消失：忘记了自己的存在</li>
+                        <li>行动流畅：无需思考，自然发生</li>
+                        <li>即时反馈：清楚地知道自己的表现</li>
+                    </ul>
+                    
+                    <div class="interactive-demo">
+                        <div class="demo-title">🎵 沉浸音景</div>
+                        <div class="demo-buttons">
+                            <button class="demo-btn" onclick="playTone(174, 3, 'sine')">174 Hz - 基础频率</button>
+                            <button class="demo-btn" onclick="playTone(285, 3, 'sine')">285 Hz - 能量场</button>
+                            <button class="demo-btn" onclick="playTone(396, 3, 'sine')">396 Hz - 释放恐惧</button>
+                        </div>
+                    </div>
+                `
+            },
+            'transcendence': {
+                title: '超越之境',
+                subtitle: '心流的最高境界',
+                content: `
+                    <h3>超越性的意识状态</h3>
+                    <p>意识突破个体的限制，与宇宙的频率共振。这是禅宗所说的"无我"，是心流的最高境界。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Theta</div>
+                            <div class="modal-stat-label">主导脑波</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">DMN</div>
+                            <div class="modal-stat-label">默认网络沉寂</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">无我</div>
+                            <div class="modal-stat-label">意识状态</div>
+                        </div>
+                    </div>
+                    
+                    <h3>超越之境的特征</h3>
+                    <ul>
+                        <li>自我边界完全消融</li>
+                        <li>与宇宙合一的感觉</li>
+                        <li>时间感彻底消失</li>
+                        <li>纯粹的觉知与存在</li>
+                    </ul>
+                    
+                    <h3>如何触及超越状态？</h3>
+                    <ul>
+                        <li>长期冥想修行</li>
+                        <li>深度艺术创作</li>
+                        <li>极限运动体验</li>
+                        <li>自然沉浸体验</li>
+                    </ul>
+                    
+                    <div class="interactive-demo">
+                        <div class="demo-title">🎵 超越频率</div>
+                        <div class="demo-buttons">
+                            <button class="demo-btn" onclick="playTone(963, 4, 'sine')">963 Hz - 神圣频率</button>
+                            <button class="demo-btn" onclick="playTone(741, 4, 'sine')">741 Hz - 觉醒频率</button>
+                            <button class="demo-btn" onclick="playTone(852, 4, 'sine')">852 Hz - 灵性频率</button>
+                        </div>
+                    </div>
+                `
+            },
+            'brainwaves': {
+                title: '脑波的交响',
+                subtitle: '大脑电信号的奥秘',
+                content: `
+                    <h3>四种主要脑波</h3>
+                    <p>大脑每时每刻都在产生电信号，这些信号以不同的频率振荡，形成了我们的意识状态。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Beta</div>
+                            <div class="modal-stat-label">14-30 Hz 清醒</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Alpha</div>
+                            <div class="modal-stat-label">8-13 Hz 放松</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Theta</div>
+                            <div class="modal-stat-label">4-7 Hz 冥想</div>
+                        </div>
+                    </div>
+                    
+                    <h3>脑波详解</h3>
+                    <ul>
+                        <li><strong>Beta波 (14-30 Hz)</strong>：清醒警觉状态，逻辑思维活跃，处理日常任务</li>
+                        <li><strong>Alpha波 (8-13 Hz)</strong>：放松平静状态，创造力涌现，学习效率最高</li>
+                        <li><strong>Theta波 (4-7 Hz)</strong>：深度冥想状态，潜意识开启，灵感涌现</li>
+                        <li><strong>Delta波 (0.5-3 Hz)</strong>：深度睡眠状态，身心修复，生长激素分泌</li>
+                    </ul>
+                    
+                    <div class="interactive-demo">
+                        <div class="demo-title">🎵 脑波频率体验</div>
+                        <p style="margin-bottom: 1rem; color: rgba(224, 224, 224, 0.7);">点击按钮体验不同脑波对应的双耳节拍频率</p>
+                        <div class="demo-buttons">
+                            <button class="demo-btn" onclick="playBrainwaveDemo('beta')">Beta - 清醒</button>
+                            <button class="demo-btn" onclick="playBrainwaveDemo('alpha')">Alpha - 放松</button>
+                            <button class="demo-btn" onclick="playBrainwaveDemo('theta')">Theta - 冥想</button>
+                            <button class="demo-btn" onclick="playBrainwaveDemo('delta')">Delta - 睡眠</button>
+                        </div>
+                    </div>
+                `
+            },
+            'transcendence': {
+                title: '超越之境',
+                subtitle: '心流的最高境界',
+                content: `
+                    <h3>超越性体验</h3>
+                    <p>这是心流的最高境界，意识突破个体的限制，与更大的整体连接。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Theta</div>
+                            <div class="modal-stat-label">脑波状态</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">DMN</div>
+                            <div class="modal-stat-label">默认网络沉寂</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">无我</div>
+                            <div class="modal-stat-label">禅宗境界</div>
+                        </div>
+                    </div>
+                    
+                    <h3>超越的迹象</h3>
+                    <ul>
+                        <li>与宇宙合一的感觉</li>
+                        <li>时间与空间的消失</li>
+                        <li>纯粹的觉知状态</li>
+                        <li>深刻的洞察与智慧</li>
+                    </ul>
+                    
+                    <div class="interactive-demo">
+                        <div class="demo-title">🎵 超越频率</div>
+                        <div class="demo-buttons">
+                            <button class="demo-btn" onclick="playTone(741, 4, 'sine')">741 Hz - 觉醒</button>
+                            <button class="demo-btn" onclick="playTone(852, 4, 'sine')">852 Hz - 灵性觉醒</button>
+                            <button class="demo-btn" onclick="playTone(963, 4, 'sine')">963 Hz - 神圣连接</button>
+                        </div>
+                    </div>
+                `
+            },
+            'brainwaves': {
+                title: '脑波交响',
+                subtitle: '意识的电信号',
+                content: `
+                    <h3>脑波类型详解</h3>
+                    
+                    <h3>Beta波 (14-30 Hz)</h3>
+                    <p>清醒警觉状态，逻辑思维活跃。适合分析问题、做决策，但过度会导致焦虑。</p>
+                    
+                    <h3>Alpha波 (8-13 Hz)</h3>
+                    <p>放松平静状态，创造力涌现。这是学习、冥想的最佳状态，也是通往潜意识的桥梁。</p>
+                    
+                    <h3>Theta波 (4-7 Hz)</h3>
+                    <p>深度冥想、浅睡眠状态。潜意识开启，创造力爆发，灵感涌现的时刻。</p>
+                    
+                    <h3>Delta波 (0.5-3 Hz)</h3>
+                    <p>深度睡眠状态，身心修复。生长激素分泌，免疫系统增强。</p>
+                    
+                    <div class="interactive-demo">
+                        <div class="demo-title">🎵 脑波频率模拟</div>
+                        <div class="demo-buttons">
+                            <button class="demo-btn" onclick="playTone(20, 3, 'sawtooth')">Beta - 20 Hz</button>
+                            <button class="demo-btn" onclick="playTone(10, 3, 'sine')">Alpha - 10 Hz</button>
+                            <button class="demo-btn" onclick="playTone(6, 3, 'sine')">Theta - 6 Hz</button>
+                            <button class="demo-btn" onclick="playTone(2, 3, 'sine')">Delta - 2 Hz</button>
+                        </div>
+                    </div>
+                `
+            },
+            'consciousness-1': {
+                title: '表层意识',
+                subtitle: '第一层次：日常觉知',
+                content: `
+                    <h3>表层意识的特点</h3>
+                    <p>这是我们最熟悉的意识状态，处理着日常的思考、决策和感知。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">40</div>
+                            <div class="modal-stat-label">比特/秒</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">前额叶</div>
+                            <div class="modal-stat-label">主要活跃区</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">逻辑</div>
+                            <div class="modal-stat-label">主导模式</div>
+                        </div>
+                    </div>
+                    
+                    <h3>表层意识的功能</h3>
+                    <ul>
+                        <li>理性思考和决策</li>
+                        <li>语言表达和沟通</li>
+                        <li>短期记忆处理</li>
+                        <li>注意力控制</li>
+                    </ul>
+                `
+            },
+            'consciousness-2': {
+                title: '潜意识层',
+                subtitle: '第二层次：隐藏的力量',
+                content: `
+                    <h3>潜意识的惊人能力</h3>
+                    <p>潜意识处理的信息量是表层意识的275,000倍，这里藏着我们的直觉和创造力。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">11M</div>
+                            <div class="modal-stat-label">比特/秒</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">275,000x</div>
+                            <div class="modal-stat-label">处理能力</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">95%</div>
+                            <div class="modal-stat-label">大脑活动</div>
+                        </div>
+                    </div>
+                    
+                    <h3>潜意识存储的内容</h3>
+                    <ul>
+                        <li>情绪记忆和反应模式</li>
+                        <li>习惯和自动行为</li>
+                        <li>创造力和直觉</li>
+                        <li>身体自动调节功能</li>
+                    </ul>
+                `
+            },
+            'consciousness-3': {
+                title: '无意识海洋',
+                subtitle: '第三层次：集体记忆',
+                content: `
+                    <h3>荣格的集体无意识</h3>
+                    <p>这里连接着人类共同的深层记忆，是创造力的终极源泉。</p>
+                    
+                    <h3>无意识的内容</h3>
+                    <ul>
+                        <li>本能和原始驱动力</li>
+                        <li>原型和普遍符号</li>
+                        <li>集体记忆和智慧</li>
+                        <li>创造力的终极源泉</li>
+                    </ul>
+                    
+                    <h3>如何接触无意识？</h3>
+                    <ul>
+                        <li>深度冥想和梦境分析</li>
+                        <li>艺术创作和自由联想</li>
+                        <li>仪式和神圣体验</li>
+                    </ul>
+                `
+            },
+            'consciousness-4': {
+                title: '超意识场',
+                subtitle: '第四层次：超越个体',
+                content: `
+                    <h3>超越性的意识状态</h3>
+                    <p>在这里，时间与空间失去意义，只有纯粹的觉知存在。</p>
+                    
+                    <h3>超意识的特征</h3>
+                    <ul>
+                        <li>超越时空的体验</li>
+                        <li>与宇宙合一的感觉</li>
+                        <li>纯粹的觉知状态</li>
+                        <li>深刻的智慧和洞察</li>
+                    </ul>
+                    
+                    <h3>触及超意识的方式</h3>
+                    <ul>
+                        <li>深度冥想和禅修</li>
+                        <li>高峰体验和心流状态</li>
+                        <li>灵性实践和仪式</li>
+                    </ul>
+                `
+            },
+            'neurons': {
+                title: '神经元宇宙',
+                subtitle: '860亿个微型处理器',
+                content: `
+                    <h3>神经元的惊人数量</h3>
+                    <p>人脑拥有约860亿个神经元，每个神经元可以与上万个其他神经元连接。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">86B</div>
+                            <div class="modal-stat-label">神经元数量</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">100T</div>
+                            <div class="modal-stat-label">突触连接</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">10,000</div>
+                            <div class="modal-stat-label">单神经元连接</div>
+                        </div>
+                    </div>
+                    
+                    <h3>神经元的工作原理</h3>
+                    <ul>
+                        <li>电信号传递：动作电位</li>
+                        <li>化学信号传递：神经递质</li>
+                        <li>可塑性：连接强度可变</li>
+                        <li>同步放电：创造意识</li>
+                    </ul>
+                `
+            },
+            'power': {
+                title: '大脑功耗',
+                subtitle: '高效的生物计算机',
+                content: `
+                    <h3>惊人的能效比</h3>
+                    <p>大脑仅占体重的2%，却消耗20%的能量，用相当于一个灯泡的功率创造整个意识世界。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">20W</div>
+                            <div class="modal-stat-label">总功耗</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">2%</div>
+                            <div class="modal-stat-label">体重占比</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">20%</div>
+                            <div class="modal-stat-label">能量消耗</div>
+                        </div>
+                    </div>
+                    
+                    <h3>能量去向</h3>
+                    <ul>
+                        <li>维持离子梯度：60%</li>
+                        <li>突触传递：20%</li>
+                        <li>神经递质回收：15%</li>
+                        <li>其他功能：5%</li>
+                    </ul>
+                `
+            },
+            'speed': {
+                title: '信号速度',
+                subtitle: '毫秒间的奇迹',
+                content: `
+                    <h3>神经冲动的速度</h3>
+                    <p>神经冲动在有髓鞘的神经纤维上，可以以每秒120米的速度传播。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">120</div>
+                            <div class="modal-stat-label">米/秒</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">432</div>
+                            <div class="modal-stat-label">公里/小时</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">毫秒</div>
+                            <div class="modal-stat-label">穿越大脑</div>
+                        </div>
+                    </div>
+                    
+                    <h3>影响速度的因素</h3>
+                    <ul>
+                        <li>髓鞘厚度：越厚越快</li>
+                        <li>纤维直径：越粗越快</li>
+                        <li>温度：越高越快</li>
+                        <li>疲劳程度：疲劳减慢</li>
+                    </ul>
+                `
+            },
+            'connections': {
+                title: '无限连接',
+                subtitle: '超越宇宙的可能性',
+                content: `
+                    <h3>连接的无限可能</h3>
+                    <p>大脑可能的连接方式数量，超过宇宙中原子总数。每个大脑都是一个独特的宇宙。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">10^80</div>
+                            <div class="modal-stat-label">宇宙原子数</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">10^100+</div>
+                            <div class="modal-stat-label">大脑连接可能</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">独特</div>
+                            <div class="modal-stat-label">每个大脑</div>
+                        </div>
+                    </div>
+                    
+                    <h3>连接的意义</h3>
+                    <ul>
+                        <li>每个大脑都是独特的宇宙</li>
+                        <li>经验塑造连接模式</li>
+                        <li>学习改变连接强度</li>
+                        <li>无限的学习潜力</li>
+                    </ul>
+                `
+            },
+            'meditation': {
+                title: '深度冥想空间',
+                subtitle: '探索意识的宁静港湾',
+                content: `
+                    <h3>冥想的科学原理</h3>
+                    <p>冥想不仅是一种精神实践，也是一种科学可验证的大脑训练方法。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">8周</div>
+                            <div class="modal-stat-label">灰质增加</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">30%</div>
+                            <div class="modal-stat-label">压力减少</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Alpha</div>
+                            <div class="modal-stat-label">主导脑波</div>
+                        </div>
+                    </div>
+                    
+                    <h3>呼吸冥想技巧</h3>
+                    <ul>
+                        <li><strong>4-7-8呼吸法</strong>：吸气4秒，屏息7秒，呼气8秒</li>
+                        <li><strong>箱式呼吸</strong>：吸气4秒，屏息4秒，呼气4秒，屏息4秒</li>
+                        <li><strong>自然呼吸</strong>：专注于呼吸的自然节奏，不加控制</li>
+                        <li><strong>计数呼吸</strong>：每次呼吸计数，从1到10，循环进行</li>
+                    </ul>
+                    
+                    <div class="interactive-demo">
+                        <div class="demo-title">🎵 冥想音乐体验</div>
+                        <div class="demo-buttons">
+                            <button class="demo-btn" onclick="playTone(432, 4, 'sine')">432 Hz - 宇宙频率</button>
+                            <button class="demo-btn" onclick="playTone(528, 4, 'sine')">528 Hz - 爱与修复</button>
+                            <button class="demo-btn" onclick="playTone(639, 4, 'sine')">639 Hz - 和谐与连接</button>
+                        </div>
+                    </div>
+                    
+                    <h3>冥想的益处</h3>
+                    <ul>
+                        <li>减轻压力和焦虑</li>
+                        <li>提高专注力和记忆力</li>
+                        <li>增强情绪调节能力</li>
+                        <li>改善睡眠质量</li>
+                        <li>提升整体幸福感</li>
+                    </ul>
+                `
+            },
+            'journey': {
+                title: '心流之旅总结',
+                subtitle: '觉醒的开始',
+                content: `
+                    <h3>你的意识探索之旅</h3>
+                    <p>通过这个沉浸式体验，你已经初步了解了意识的不同层次和心流状态的奥秘。</p>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">3</div>
+                            <div class="modal-stat-label">心流境界</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">4</div>
+                            <div class="modal-stat-label">脑波状态</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">∞</div>
+                            <div class="modal-stat-label">可能性</div>
+                        </div>
+                    </div>
+                    
+                    <h3>继续探索的方向</h3>
+                    <ul>
+                        <li><strong>日常实践</strong>：每天10-15分钟的冥想练习</li>
+                        <li><strong>深度学习</strong>：阅读神经科学和意识研究的书籍</li>
+                        <li><strong>技能培养</strong>：选择一项技能，刻意练习进入心流状态</li>
+                        <li><strong>社区连接</strong>：与志同道合的人分享你的探索</li>
+                    </ul>
+                    
+                    <h3>记住</h3>
+                    <p style="font-style: italic; text-align: center; margin: 2rem 0; font-size: 1.2rem;">
+                        "意识的探索没有终点，每一次觉醒都是新的起点。"
+                    </p>
+                    
+                    <div class="interactive-demo">
+                        <div class="demo-title">🎵 旅程结束音乐</div>
+                        <div class="demo-buttons">
+                            <button class="demo-btn" onclick="playSuccessSound()">成功完成</button>
+                            <button class="demo-btn" onclick="playTransitionSound()">过渡到新开始</button>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalClose = document.getElementById('modalClose');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalBody = document.getElementById('modalBody');
+
+        function openModal(modalId) {
+            const data = modalData[modalId];
+            if (!data) return;
+            
+            modalTitle.textContent = data.title;
+            modalSubtitle.textContent = data.subtitle;
+            modalBody.innerHTML = data.content;
+            
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            playModalOpenSound();
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            playModalCloseSound();
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        document.querySelectorAll('[data-modal]').forEach(el => {
+            el.addEventListener('click', () => {
+                const modalId = el.getAttribute('data-modal');
+                openModal(modalId);
+                playClickSound();
+            });
+            
+            el.addEventListener('mouseenter', () => {
+                playHoverSound();
+            });
+        });
+
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 100; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particle.style.width = (4 + Math.random() * 8) + 'px';
+            particle.style.height = (4 + Math.random() * 8) + 'px';
+            particlesContainer.appendChild(particle);
+        }
+
+        const neuralNetwork = document.getElementById('neuralNetwork');
+        for (let i = 0; i < 20; i++) {
+            const neuron = document.createElement('div');
+            neuron.className = 'neuron';
+            neuron.style.left = Math.random() * 100 + '%';
+            neuron.style.top = Math.random() * 100 + '%';
+            neuron.style.animationDelay = Math.random() * 3 + 's';
+            neuralNetwork.appendChild(neuron);
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.flow-card, .fact-card, .level-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        const breathingText = document.querySelector('.breathing-text');
+        const breathingStates = ['吸气...', '屏息...', '呼气...', '屏息...'];
+        let breathingIndex = 0;
+
+        setInterval(() => {
+            breathingText.textContent = breathingStates[breathingIndex];
+            playBreathingSound(breathingStates[breathingIndex].replace('...', '').toLowerCase());
+            breathingIndex = (breathingIndex + 1) % breathingStates.length;
+        }, 2000);
+
+        const breathingCircle = document.getElementById('breathingCircle');
+        breathingCircle.addEventListener('click', () => {
+            playClickSound();
+            openModal('meditation');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const startJourney = document.getElementById('startJourney');
+        startJourney.addEventListener('click', (e) => {
+            e.preventDefault();
+            playClickSound();
+            openModal('journey');
+        });
+
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            const hero = document.querySelector('.hero-content');
+            if (hero) {
+                const opacity = 1 - (st / window.innerHeight);
+                hero.style.opacity = Math.max(opacity, 0);
+                hero.style.transform = `translateY(${st * 0.3}px)`;
+            }
+            
+            // 导航菜单滚动效果
+            const nav = document.querySelector('.nav-container');
+            if (nav) {
+                if (st > 100) {
+                    nav.style.background = 'rgba(13, 27, 42, 0.95)';
+                    nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+                } else {
+                    nav.style.background = 'rgba(13, 27, 42, 0.8)';
+                    nav.style.boxShadow = 'none';
+                }
+            }
+            
+            // 导航菜单激活状态
+            updateNavActive(st);
+            
+            lastScrollTop = st <= 0 ? 0 : st;
+        });
+
+        // 鼠标跟随效果
+        const mouseTrail = [];
+        const maxTrailLength = 5;
+
+        document.addEventListener('mousemove', (e) => {
+            // 创建新的轨迹元素
+            const trail = document.createElement('div');
+            trail.className = 'mouse-trail';
+            trail.style.left = e.clientX - 4 + 'px';
+            trail.style.top = e.clientY - 4 + 'px';
+            document.body.appendChild(trail);
+            
+            // 添加到轨迹数组
+            mouseTrail.push(trail);
+            
+            // 限制轨迹长度
+            if (mouseTrail.length > maxTrailLength) {
+                const oldestTrail = mouseTrail.shift();
+                if (oldestTrail) {
+                    oldestTrail.remove();
+                }
+            }
+            
+            // 淡出效果
+            setTimeout(() => {
+                if (trail.parentNode) {
+                    trail.style.opacity = '0';
+                    setTimeout(() => {
+                        if (trail.parentNode) {
+                            trail.remove();
+                        }
+                    }, 500);
+                }
+            }, 100);
+        });
+
+        // 粒子与鼠标互动
+        document.addEventListener('mousemove', (e) => {
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach(particle => {
+                const rect = particle.getBoundingClientRect();
+                const particleX = rect.left + rect.width / 2;
+                const particleY = rect.top + rect.height / 2;
+                const distance = Math.sqrt(
+                    Math.pow(e.clientX - particleX, 2) + 
+                    Math.pow(e.clientY - particleY, 2)
+                );
+                
+                if (distance < 200) {
+                    const force = (200 - distance) / 200;
+                    const angle = Math.atan2(
+                        e.clientY - particleY,
+                        e.clientX - particleX
+                    );
+                    const moveX = Math.cos(angle) * force * 40;
+                    const moveY = Math.sin(angle) * force * 40;
+                    
+                    particle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                    particle.style.opacity = '1';
+                    particle.style.scale = '1.5';
+                    
+                    setTimeout(() => {
+                        particle.style.transform = 'translate(0, 0)';
+                        particle.style.opacity = '0.3';
+                        particle.style.scale = '1';
+                    }, 800);
+                }
+            });
+        });
+
+        function updateNavActive(scrollTop) {
+            const sections = document.querySelectorAll('section, .hero');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
+                    currentSection = section.id;
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // 导航链接点击事件
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    playClickSound();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
